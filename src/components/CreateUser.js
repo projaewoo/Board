@@ -4,11 +4,6 @@ import styled from "styled-components";
 const CreateUser = (props) => {
   const { username, email, onChange, onCreate } = props;
 
-  useEffect(() => {
-    console.log(`username`, username);
-    console.log(`email`, email);
-  }, [username, email]);
-
   return (
     <CreateUserWrapper>
       <input name="username" placeholder="계정명" onChange={onChange} />
