@@ -28,8 +28,6 @@ const NavBarWrapper = styled.div`
   padding: 20px;
   background-color: #bdbdbd;
 
-  transition: linear 0.1s;
-
   display: flex;
   flex-direction: column;
 

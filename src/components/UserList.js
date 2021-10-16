@@ -1,22 +1,47 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useContext } from "react";
 
-const UserList = (props) => {
-  const { users } = props;
+import { UserDispatch } from "./MainPage";
+
+const User = React.memo(function User({ user }) {
+  const dispatch = useContext(UserDispatch);
 
   return (
-    <UserListWrapper>
+    <div>
+      <b
+        style={{
+          cursor: "pointer",
+          color: user.active ? "green" : "black",
+        }}
+        onClick={() => {
+          dispatch({
+            type: "TOGGLE_USER",
+            id: user.id,
+          });
+        }}
+      >
+        {user.username}
+      </b>
+      &nbsp;
+      <span>({user.email})</span>
+      <button
+        onClick={() => {
+          dispatch({ type: "REMOVE_USER", id: user.id });
+        }}
+      >
+        remove
+      </button>
+    </div>
+  );
+});
+
+const UserList = ({ users }) => {
+  return (
+    <div>
       {users.map((user) => (
-        <>
-          <span>{user.username}</span>
-          <span>({user.email})</span>
-          <br />
-        </>
+        <User user={user} key={user.id} />
       ))}
-    </UserListWrapper>
+    </div>
   );
 };
 
-const UserListWrapper = styled.div``;
-
-export default UserList;
+export default React.memo(UserList);

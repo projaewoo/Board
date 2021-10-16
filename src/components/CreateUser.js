@@ -1,13 +1,22 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
-const CreateUser = (props) => {
-  const { username, email, onChange, onCreate } = props;
+const CreateUser = ({ username, email, onChange, onCreate }) => {
 
   return (
     <CreateUserWrapper>
-      <input name="username" placeholder="계정명" onChange={onChange} />
-      <input name="emial" placeholder="이메일" onChange={onChange} />
+      <input 
+        name="username" 
+        value={username} 
+        placeholder="계정명" 
+        onChange={onChange} 
+      />
+      <input 
+        name="email" 
+        value={email} 
+        placeholder="이메일" 
+        onChange={onChange} 
+      />
       <button onClick={() => onCreate()}>등록</button>
     </CreateUserWrapper>
   );
