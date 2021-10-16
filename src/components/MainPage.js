@@ -26,12 +26,6 @@ const initialState = {
       email: "banja@daum.net",
       active: false,
     },  
-    {
-      id: 4,
-      username: "banja4",
-      email: "banja4@daum.net",
-      active: false,
-    },
   ],
 };
 
