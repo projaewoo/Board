@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { TotalConsumer } from "../App";
 import { TodoInsert, TodoList } from "./Todo";
 import { MENU } from "../utils/MENU";
-import Promise from "./Test/Promise";
+import Async from "./Test/async";
 
 const MainPage = (props) => {
   const { sideBar } = props;
@@ -20,7 +20,7 @@ const MainPage = (props) => {
             </>
           ) : state.page === MENU[1] ? (
             <>
-              <Promise />
+              <Async />
             </>
           ) : null
         }
