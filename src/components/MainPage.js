@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import { TotalConsumer } from "../App";
 import { TodoInsert, TodoList } from "./Todo";
+import { MENU } from "../utils/MENU";
+import Promise from "./Test/Promise";
 
 const MainPage = (props) => {
   const { sideBar } = props;
@@ -11,10 +13,14 @@ const MainPage = (props) => {
     <MainPageWrapper sideBar={sideBar}>
       <TotalConsumer>
         {({ state }) =>
-          state.page === "TodoList" ? (
+          state.page === MENU[0] ? (
             <>
               <TodoInsert />
               <TodoList />
+            </>
+          ) : state.page === MENU[1] ? (
+            <>
+              <Promise />
             </>
           ) : null
         }
