@@ -11,7 +11,7 @@ const NavBar = (props) => {
       <HamburgerIcon onClick={() => setSideBar(!sideBar)} />
       {sideBar ? (
         <>
-          <p>menu 1</p>
+          <p>TodoList</p>
           <p>menu 2</p>
         </>
       ) : null}
