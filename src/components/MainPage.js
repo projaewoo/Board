@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { TodoProvider } from "./Todo/index";
+import { TotalConsumer } from "../App";
 import { TodoInsert, TodoList } from "./Todo";
 
 const MainPage = (props) => {
@@ -9,10 +9,16 @@ const MainPage = (props) => {
 
   return (
     <MainPageWrapper sideBar={sideBar}>
-      <TodoProvider>
-        <TodoInsert />
-        <TodoList />
-      </TodoProvider>
+      <TotalConsumer>
+        {({ state }) =>
+          state.page === "TodoList" ? (
+            <>
+              <TodoInsert />
+              <TodoList />
+            </>
+          ) : null
+        }
+      </TotalConsumer>
     </MainPageWrapper>
   );
 };
