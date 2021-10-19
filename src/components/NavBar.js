@@ -1,21 +1,36 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 
+import { MENU } from "../utils/MENU";
+import { TotalConsumer } from "../App";
+
 import { GiHamburgerMenu as HamburgerIcon } from "react-icons/gi";
 
 const NavBar = (props) => {
   const { sideBar, setSideBar } = props;
 
   return (
-    <NavBarWrapper sideBar={sideBar}>
-      <HamburgerIcon onClick={() => setSideBar(!sideBar)} />
-      {sideBar ? (
-        <>
-          <p>TodoList</p>
-          <p>menu 2</p>
-        </>
-      ) : null}
-    </NavBarWrapper>
+    <TotalConsumer>
+      {({ state, actions }) => (
+        console.log(state),
+        (
+          <NavBarWrapper sideBar={sideBar}>
+            <HamburgerIcon onClick={() => setSideBar(!sideBar)} />
+            {sideBar
+              ? MENU.map((menu, index) => (
+                  <p
+                    key={index}
+                    onClick={() => actions.setPage(menu)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    {menu}
+                  </p>
+                ))
+              : null}
+          </NavBarWrapper>
+        )
+      )}
+    </TotalConsumer>
   );
 };
 

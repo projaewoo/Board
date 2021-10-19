@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import { TodoConsumer } from "./index";
+import { TotalConsumer } from "../../App";
 
 const TodoInsert = () => {
   const [inputValue, setInputValue] = useState();
 
   return (
-    <TodoConsumer>
+    <TotalConsumer>
       {({ actions }) => (
         <>
           <input type="text" onChange={(e) => setInputValue(e.target.value)} />
@@ -20,7 +20,7 @@ const TodoInsert = () => {
           </button>
         </>
       )}
-    </TodoConsumer>
+    </TotalConsumer>
   );
 };
 
