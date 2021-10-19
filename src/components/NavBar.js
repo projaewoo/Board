@@ -11,7 +11,7 @@ const NavBar = (props) => {
       <HamburgerIcon onClick={() => setSideBar(!sideBar)} />
       {sideBar ? (
         <>
-          <p>menu 1</p>
+          <p>TodoList</p>
           <p>menu 2</p>
         </>
       ) : null}
@@ -27,8 +27,6 @@ const NavBarWrapper = styled.div`
   width: ${(props) => (props.sideBar ? "150px" : "20px")};
   padding: 20px;
   background-color: #bdbdbd;
-
-  transition: linear 0.1s;
 
   display: flex;
   flex-direction: column;

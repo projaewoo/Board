@@ -1,10 +1,4 @@
-import React, {
-  useReducer,
-  useState,
-  useRef,
-  useCallback,
-  useMemo,
-} from "react";
+import React, { useState } from "react";
 import NavBar from "./components/NavBar";
 import MainPage from "./components/MainPage";
 
