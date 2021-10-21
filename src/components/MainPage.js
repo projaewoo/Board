@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 import { TotalConsumer } from "../App";
-import { TodoInsert, TodoList } from "./Todo";
 import { MENU } from "../utils/MENU";
-import Async from "./Test/async";
+import { TodoInsert, TodoList } from "./Todo";
+import { NewsList } from "./NewsViewer/index";
 
 const MainPage = (props) => {
   const { sideBar } = props;
@@ -20,7 +20,7 @@ const MainPage = (props) => {
             </>
           ) : state.page === MENU[1] ? (
             <>
-              <Async />
+              <NewsList />
             </>
           ) : null
         }
